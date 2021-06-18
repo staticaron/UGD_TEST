@@ -193,7 +193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992005338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -279,6 +279,9 @@ MonoBehaviour:
   normalSpeed: 5
   maxSpeed: 5
   maxOffset: 0
+  normalOrthographicSize: 5
+  maxOrthographicSize: 8
+  easingSpeed: 1
 --- !u!1 &1210540224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,6 +3579,14 @@ PrefabInstance:
     - target: {fileID: 4053644621318609915, guid: 6aa428a54a7f316458a1b3cab56e59a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114744798992869847, guid: 6aa428a54a7f316458a1b3cab56e59a9, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114744798992869847, guid: 6aa428a54a7f316458a1b3cab56e59a9, type: 3}
+      propertyPath: m_Offset.y
+      value: -14.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa428a54a7f316458a1b3cab56e59a9, type: 3}
