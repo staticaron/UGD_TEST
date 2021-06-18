@@ -8,7 +8,7 @@ public class Sea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Restart the level
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
