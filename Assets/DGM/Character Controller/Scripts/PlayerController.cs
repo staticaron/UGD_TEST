@@ -109,11 +109,11 @@ public class PlayerController : MonoBehaviour
     [Header("Checkers (Only for reference, Can't be edited)------------------------------------------------------------------------------")]
     [SerializeField] private bool groundCheck; //GroundCheck = GroundCheckRealtime + coyotiness
     [SerializeField] public bool groundCheckRealtime;
-    [HideInInspector] private bool oldGroundCheckRealtime;
-    [SerializeField] private bool handCheckRealtime;
-    [SerializeField] private bool oldHandCheckRealtime;
-    [SerializeField] private bool shoulderCheckRealtime;
-    [SerializeField] private bool ledgeNearby;
+    [HideInInspector] protected bool oldGroundCheckRealtime;
+    [SerializeField] protected bool handCheckRealtime;
+    [SerializeField] protected bool oldHandCheckRealtime;
+    [SerializeField] protected bool shoulderCheckRealtime;
+    [SerializeField] protected bool ledgeNearby;
 
     [Header("Foot Properties------------------------------------------------------------------------------")]
     [SerializeField] private Transform foot;
@@ -240,6 +240,8 @@ public class PlayerController : MonoBehaviour
         ApplyDrag();
 
         RemoveFloatiness();
+
+        Dusting();
 
         oldGroundCheckRealtime = groundCheckRealtime;
         oldHandCheckRealtime = handCheckRealtime;
@@ -795,5 +797,10 @@ public class PlayerController : MonoBehaviour
         else { Debug.DrawLine(hand.position, hand.position - new Vector3(handLength, 0, 0), Color.green); }
         if (thisRotation.y == 0) { if (handVisualization == true) Debug.DrawLine(shoulder.position, shoulder.position + new Vector3(shoulderLength, 0, 0), Color.cyan); }
         else { Debug.DrawLine(shoulder.position, shoulder.position - new Vector3(shoulderLength, 0, 0), Color.cyan); }
+    }
+
+    protected virtual void Dusting()
+    {
+
     }
 }
