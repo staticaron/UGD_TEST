@@ -33,9 +33,21 @@ public class Door : MonoBehaviour
             //Check for the open door
             if (isOpen)
             {
-                //Check for time
+                TimeManager timeManager = TimeManager.instance;
+                float timeLeft;
+                float.TryParse(timeManager.GetTimeLeft(), out timeLeft);
 
-                Debug.Log("Next Level");
+                LevelManager levelManager = LevelManager.instance;
+                int currentBuildIndex = levelManager.currentLevelIndex;
+
+                if (timeLeft <= 0)
+                {
+                    levelManager.PlayEndTransitionAndLoadLevel(currentBuildIndex);
+                }
+                else
+                {
+                    levelManager.PlayEndTransitionAndLoadLevel(currentBuildIndex + 1);
+                }
             }
         }
     }
