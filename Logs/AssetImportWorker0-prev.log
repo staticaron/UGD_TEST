@@ -15,11 +15,11 @@ H:/Projects/UnitedGameDevelopersGame
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49164
+49185
 Successfully changed project path to: H:/Projects/UnitedGameDevelopersGame
 H:/Projects/UnitedGameDevelopersGame
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 141.01 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 85.90 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.4f1 (0abb6314276a)
 [Subsystems] Discovering subsystems at path H:/Unity2020.3/Editor/Data/Resources/UnitySubsystems
@@ -36,16 +36,16 @@ Initialize mono
 Mono path[0] = 'H:/Unity2020.3/Editor/Data/Managed'
 Mono path[1] = 'H:/Unity2020.3/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'H:/Unity2020.3/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56640
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: H:/Unity2020.3/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001385 seconds.
+Registered in 0.114450 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 67.31 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 22.90 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in 10.164 seconds
+- Completed reload, in 15.313 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001018 seconds.
+Registered in 0.000633 seconds.
