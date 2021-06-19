@@ -9,13 +9,16 @@ public class Door : MonoBehaviour
 
     [SerializeField] bool isOpen = false;
 
-    private void Start()
+    private void Awake()
     {
         #region Maintain a single instance
         if (instance == null) { instance = this; }
         else { Destroy(gameObject); }
         #endregion
+    }
 
+    private void Start()
+    {
         //References
         animator = GetComponent<Animator>();
     }

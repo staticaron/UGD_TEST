@@ -12,13 +12,16 @@ public class LevelManager : MonoBehaviour
     public int currentLevelIndex;
     public int levelToLoad = 0;
 
+    private void Awake()
+    {
+        #region Maintain a single instance
+        if (instance == null) { instance = this; }
+        else { Destroy(gameObject); }
+        #endregion
+    }
+
     private void Start()
     {
-
-        #region  Maintain single instance
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
-        #endregion
         animator = GetComponent<Animator>();
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
     }

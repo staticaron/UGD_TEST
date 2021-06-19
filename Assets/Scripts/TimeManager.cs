@@ -12,13 +12,16 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] TimerState timerState = TimerState.OFF;
 
-    public void Start()
+    private void Awake()
     {
         #region Maintain a single instance
         if (instance == null) { instance = this; }
         else { Destroy(gameObject); }
         #endregion
+    }
 
+    public void Start()
+    {
         //TODO Do some sort of counting
         timeLeft = maxTime;
         timerState = TimerState.ON;
