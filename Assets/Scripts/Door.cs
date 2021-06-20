@@ -33,12 +33,14 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //Disable the controller
-            other.GetComponent<Player>().StopMovement();
 
             //Check for the open door
             if (isOpen)
             {
+                //Disable the controller
+                other.GetComponent<Player>().StopMovement();
+
+                //Time
                 TimeManager timeManager = TimeManager.instance;
                 float timeLeft;
                 float.TryParse(timeManager.GetTimeLeft(), out timeLeft);
