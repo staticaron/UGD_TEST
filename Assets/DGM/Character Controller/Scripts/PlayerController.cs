@@ -91,11 +91,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Vector2 thisVelocity;
 
     [Header("Actions------------------------------------------------------------------------------")]
-    [SerializeField] private bool runEnabled;
-    [SerializeField] private bool climbEnabled;
-    [SerializeField] private bool jumpEnabled;
-    [SerializeField] private bool dashEnabled;
-    [SerializeField] private bool grabEnabled;
+    [SerializeField] protected bool runEnabled;
+    [SerializeField] protected bool climbEnabled;
+    [SerializeField] protected bool jumpEnabled;
+    [SerializeField] protected bool dashEnabled;
+    [SerializeField] protected bool grabEnabled;
 
     //General Properties
     [Header("General Properties------------------------------------------------------------------------------")]
