@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG/Sky
+    uniqueID: 1319460857
+    locked: 0
+  - name: BG/Props
+    uniqueID: 917088833
+    locked: 0
+  - name: BG/Front
+    uniqueID: 1536990477
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2298769979
     locked: 0
