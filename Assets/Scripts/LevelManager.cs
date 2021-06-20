@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum LoadReason { LEVEL_COMPLETED, TIME_OUT, SPIKE, SEA };
+
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
@@ -10,7 +12,13 @@ public class LevelManager : MonoBehaviour
     public const string TransitionOutAnimationName = "TransitionOut";
 
     public int currentLevelIndex;
-    public int levelToLoad = 0;
+    private int levelToLoad = 0;
+
+    //Time
+    [SerializeField] float reloadTimeSpikes;
+    [SerializeField] float reloadTimeLevelComplete;
+    [SerializeField] float reloadTimeTimeOut;
+    [SerializeField] float reloadTimeSea;
 
     private void Awake()
     {
@@ -26,13 +34,33 @@ public class LevelManager : MonoBehaviour
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    public void PlayEndTransitionAndLoadLevel(int levelIndex)
+    public void PlayEndTransitionAndLoadLevel(int levelIndex, LoadReason reason)
+    {
+        levelToLoad = levelIndex;
+
+        switch (reason)
+        {
+            case LoadReason.SPIKE:
+                Invoke("PlayEndTransition", reloadTimeSpikes);
+                break;
+            case LoadReason.LEVEL_COMPLETED:
+                Invoke("PlayEndTransition", reloadTimeLevelComplete);
+                break;
+            case LoadReason.SEA:
+                Invoke("PlayEndTransition", reloadTimeSea);
+                break;
+            case LoadReason.TIME_OUT:
+                Invoke("PlayEndTransition", reloadTimeTimeOut);
+                break;
+        }
+    }
+
+    private void PlayEndTransition()
     {
         //Play Transition
         animator.Play(TransitionOutAnimationName);
-
-        levelToLoad = levelIndex;
     }
+
 
     public void LoadLevel()
     {

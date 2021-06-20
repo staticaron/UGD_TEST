@@ -33,6 +33,9 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //Disable the controller
+            other.GetComponent<Player>().StopMovement();
+
             //Check for the open door
             if (isOpen)
             {
@@ -43,13 +46,14 @@ public class Door : MonoBehaviour
                 LevelManager levelManager = LevelManager.instance;
                 int currentBuildIndex = levelManager.currentLevelIndex;
 
+                //Load Level according to time taken
                 if (timeLeft <= 0)
                 {
-                    levelManager.PlayEndTransitionAndLoadLevel(currentBuildIndex);
+                    levelManager.PlayEndTransitionAndLoadLevel(currentBuildIndex, LoadReason.TIME_OUT);
                 }
                 else
                 {
-                    levelManager.PlayEndTransitionAndLoadLevel(currentBuildIndex + 1);
+                    levelManager.PlayEndTransitionAndLoadLevel(currentBuildIndex + 1, LoadReason.LEVEL_COMPLETED);
                 }
             }
         }

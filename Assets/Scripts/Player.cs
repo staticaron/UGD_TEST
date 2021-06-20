@@ -14,4 +14,12 @@ public class Player : PlayerController
         }
     }
 
+    public void StopMovement()
+    {
+        base.runEnabled = false;
+        base.jumpEnabled = false;
+        base.dashEnabled = false;
+        base.grabEnabled = false;
+        base.climbEnabled = false;
+    }
 }
