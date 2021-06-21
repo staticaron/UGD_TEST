@@ -1,0 +1,33 @@
+{
+    "name": "PauseMenuActionMap",
+    "maps": [
+        {
+            "name": "PauseMenu",
+            "id": "13fb5dff-8d5a-434e-8c7d-efda430def05",
+            "actions": [
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "b84ab3cc-44cb-4374-8f4e-f0ac8491ad5c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a19c1afd-ccad-4259-9711-b56551e71d17",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

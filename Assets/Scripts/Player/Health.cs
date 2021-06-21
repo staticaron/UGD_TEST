@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(LoadReason reason)
     {
         //Spawn Some death effects
+        Debug.Log("Death Effects Spawned");
 
         //Play dead sfx
         GetComponent<Player>().StopMovement();
