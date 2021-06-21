@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     private Animator animator;
 
     public const string TransitionOutAnimationName = "TransitionOut";
+    private const string lastLevelReachedPlayerPrefsKey = "LevelReached";
 
     public int currentLevelIndex;
     private int levelToLoad = 0;
@@ -32,6 +33,14 @@ public class LevelManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+
+        //Update the levels played
+        int lastLevelPlayed = PlayerPrefs.GetInt(lastLevelReachedPlayerPrefsKey);
+
+        if (lastLevelPlayed < currentLevelIndex)
+        {
+            PlayerPrefs.SetInt(lastLevelReachedPlayerPrefsKey, currentLevelIndex);
+        }
     }
 
     public void PlayEndTransitionAndLoadLevel(int levelIndex, LoadReason reason)
@@ -60,7 +69,6 @@ public class LevelManager : MonoBehaviour
         //Play Transition
         animator.Play(TransitionOutAnimationName);
     }
-
 
     public void LoadLevel()
     {

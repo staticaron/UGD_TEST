@@ -15,8 +15,13 @@ public class PauseMenu : MonoBehaviour
         pauseMenuActionMap.PauseMenu.Restart.started += _ => Restart();
     }
 
-    public void Restart() 
-    { 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Restart()
+    {
         int currentLevelIndex = LevelManager.instance.currentLevelIndex;
         SceneManager.LoadScene(currentLevelIndex);
     }
